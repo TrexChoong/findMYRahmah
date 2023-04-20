@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1'
 }
 
 android {
@@ -37,9 +38,10 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
@@ -48,4 +50,17 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    // Dependency to include Maps SDK for Android
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.maps.android:android-maps-utils:2.2.0'
+    // [END_EXCLUDE]
+
+    // Maps SDK for Android KTX Library
+    implementation 'com.google.maps.android:maps-ktx:3.3.0'
+
+    // Maps SDK for Android Utility Library KTX Library
+    implementation 'com.google.maps.android:maps-utils-ktx:3.0.0'
+
+    // Lifecycle Runtime KTX Library
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
 }
