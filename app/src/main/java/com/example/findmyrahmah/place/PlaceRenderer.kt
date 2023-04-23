@@ -37,13 +37,13 @@ class PlaceRenderer(
     /**
      * The icon to use for each cluster item
      */
-    private val bicycleIcon: BitmapDescriptor by lazy {
+    private val restaurantIcon: BitmapDescriptor by lazy {
         val color = ContextCompat.getColor(context,
             R.color.colorPrimary
         )
         BitmapHelper.vectorToBitmap(
             context,
-            R.drawable.ic_directions_bike_black_24dp,
+            R.drawable.baseline_restaurant_24,
             color
         )
     }
@@ -55,7 +55,7 @@ class PlaceRenderer(
     override fun onBeforeClusterItemRendered(item: Place, markerOptions: MarkerOptions) {
         markerOptions.title(item.name)
             .position(item.latLng)
-            .icon(bicycleIcon)
+            .icon(restaurantIcon)
     }
 
     /**

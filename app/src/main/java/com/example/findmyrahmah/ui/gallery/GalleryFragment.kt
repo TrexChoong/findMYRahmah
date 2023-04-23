@@ -45,8 +45,8 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
+//        val galleryViewModel =
+//            ViewModelProvider(this).get(GalleryViewModel::class.java)
 
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -127,9 +127,9 @@ class GalleryFragment : Fragment() {
     }
     // [END maps_android_add_map_codelab_ktx_add_circle]
 
-    private val bicycleIcon: BitmapDescriptor by lazy {
+    private val restaurantIcon: BitmapDescriptor by lazy {
         val color = ContextCompat.getColor(requireContext(), R.color.colorPrimary)
-        BitmapHelper.vectorToBitmap(requireContext(), R.drawable.ic_directions_bike_black_24dp, color)
+        BitmapHelper.vectorToBitmap(requireContext(), R.drawable.baseline_restaurant_24, color)
     }
 
     // [START maps_android_add_map_codelab_ktx_add_markers]
@@ -141,7 +141,7 @@ class GalleryFragment : Fragment() {
             val marker = googleMap.addMarker {
                 title(place.name)
                 position(place.latLng)
-                icon(bicycleIcon)
+                icon(restaurantIcon)
             }
             // Set place as the tag on the marker object so it can be referenced within
             // MarkerInfoWindowAdapter
