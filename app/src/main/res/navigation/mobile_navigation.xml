@@ -22,4 +22,9 @@
         android:name="com.example.findmyrahmah.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_favourite"
+        android:name="com.example.findmyrahmah.ui.favourite.FavouriteFragment"
+        android:label="@string/menu_favourite"
+        tools:layout="@layout/fragment_favourite"/>
 </navigation>
