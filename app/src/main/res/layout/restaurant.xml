@@ -36,7 +36,7 @@
             app:layout_constraintGuide_begin="153dp" />
 
         <TextView
-            android:id="@+id/Restaurant_name"
+            android:id="@+id/RestaurantName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -46,14 +46,24 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/RestaurantAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="30dp"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/Restaurant_name" />
+            app:layout_constraintTop_toBottomOf="@+id/RestaurantName" />
+
+        <TextView
+            android:id="@+id/RestaurantRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/RestaurantName"
+            app:layout_constraintStart_toEndOf="@+id/RestaurantName"
+            app:layout_constraintTop_toTopOf="@+id/RestaurantName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

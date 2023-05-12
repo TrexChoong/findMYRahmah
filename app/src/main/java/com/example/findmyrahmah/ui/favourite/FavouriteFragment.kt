@@ -8,15 +8,30 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.findmyrahmah.databinding.FragmentHomeBinding
-import com.example.findmyrahmah.ui.home.HomeViewModel
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import org.json.JSONException
+import org.json.JSONObject
+import java.io.IOException
+import java.nio.charset.Charset
+
 
 class FavouriteFragment: Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+    var restaurantName: ArrayList<String> = ArrayList()
+    var restaurantAddress: ArrayList<String> = ArrayList()
+    var restaurantRating: ArrayList<Double> = ArrayList()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
