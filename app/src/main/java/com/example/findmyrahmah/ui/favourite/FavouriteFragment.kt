@@ -44,9 +44,9 @@ class FavouriteFragment: Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
+        //val textView: TextView = binding.textHome
         favouriteViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+         //   textView.text = it
         }
         return root
     }

@@ -15,12 +15,13 @@
 package com.example.findmyrahmah.place
 
 import com.google.android.gms.maps.model.LatLng
+import java.util.Date
 
 data class PlaceResponse(
     val geometry: Geometry,
     val name: String,
     val vicinity: String,
-    val rating: Float
+    val date_expired: Date
 ) {
 
     data class Geometry(
@@ -37,5 +38,5 @@ fun PlaceResponse.toPlace(): Place = Place(
     name = name,
     latLng = LatLng(geometry.location.lat, geometry.location.lng),
     address = vicinity,
-    rating = rating
+    date_expired = date_expired
 )

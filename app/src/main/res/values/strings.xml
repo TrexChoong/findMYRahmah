@@ -6,6 +6,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="action_upload">Upload</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Find MY Rahmah</string>
@@ -34,4 +35,14 @@
     </string-array>
 
 
+
+    <!-- API IMPLEMENTATION -->
+    <string name="url_server">https://testapitrexworkshop.000webhostapp.com/api/</string>
+    <string name="url_shop_create">suggest_shop/create.php</string>
+    <string name="url_announce_read">announcements/read.php</string>
+    <string name="url_shop_likes_read">shop_likes/read_top.php</string>
+    <string name="shop_suggested">Shop Suggested</string>
+    <string name="shop_not_suggested">Shop not Suggested</string>
+
+    <string name="announcement">Announcement</string>
 </resources>

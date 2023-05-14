@@ -17,6 +17,7 @@ package com.example.findmyrahmah.place
 import android.content.Context
 import com.example.findmyrahmah.R
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -27,7 +28,12 @@ import java.io.InputStreamReader
 class PlacesReader(private val context: Context) {
 
     // GSON object responsible for converting from JSON to a Place object
-    private val gson = Gson()
+    //private val gson = Gson()
+    //format date
+    private var dateFormat:kotlin.String? = "yyyy-MM-dd HH:mm:ss.SSSZ"
+    private val gson: Gson = GsonBuilder()
+        .setDateFormat(this.dateFormat)
+        .create()
 
     // InputStream representing places.json
     private val inputStream: InputStream

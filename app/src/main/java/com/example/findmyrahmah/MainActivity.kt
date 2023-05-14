@@ -2,9 +2,13 @@ package com.example.findmyrahmah
 
 import android.app.TimePickerDialog
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.widget.Button
 import android.widget.TimePicker
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -93,6 +97,7 @@ class MainActivity : AppCompatActivity() {
 //        }
 
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
