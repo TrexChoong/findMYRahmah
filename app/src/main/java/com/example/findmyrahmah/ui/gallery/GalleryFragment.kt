@@ -60,7 +60,11 @@ class GalleryFragment : Fragment() {
         val root: View = binding.root
         val mapFragment =
             childFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment
-        this.readAnnouncements();
+
+        //this.readAnnoucements();
+        //this.readTopShops();
+        //this.suggestShop("TBR Coconut Shake",3.2124512,101.7285097,"2024-05-05%2000:00:00");
+
         lifecycleScope.launchWhenCreated {
             // Get map
             val googleMap = mapFragment.awaitMap()
@@ -190,4 +194,63 @@ class GalleryFragment : Fragment() {
             jsonObjectRequest.retryPolicy = DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 0, 1f)
             WebDB.getInstance(requireContext()).addToRequestQueue(jsonObjectRequest)
         }
+
+
+    private fun readTopShops(){
+        val url = getString(R.string.url_server) + getString(R.string.url_shop_likes_read)
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            {response ->
+                try{
+                    if(response != null){
+                        val strResponse = response.toString()
+                        val jsonResponse = JSONObject(strResponse)
+                        val records: String = jsonResponse.get("records").toString()
+
+                        Log.d("Second Fragment", "Response: %s".format(records))
+                    }
+                }catch (e: Exception){
+                    Log.d("Second Fragment", "Response: %s".format(e.message.toString()))
+                }
+            },
+            {
+                    error ->
+                Log.d("Second Fragment", "Response : %s".format(error.message.toString()))
+            }
+        )
+        jsonObjectRequest.retryPolicy = DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 0, 1f)
+        WebDB.getInstance(requireContext()).addToRequestQueue(jsonObjectRequest)
+    }
+
+    private fun suggestShop(name: String, lat: Double, longCord: Double, date_expired: String){
+        //dummy
+        val url = getString(R.string.url_server) + getString(R.string.url_shop_create)+"?name=" + name + "&lat=" + lat + "&longCord=" + longCord + "&date_expired=" + date_expired
+
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            {response ->
+                try{
+                    if(response != null){
+                        val strResponse = response.toString()
+                        val jsonResponse = JSONObject(strResponse)
+                        val success: String = jsonResponse.get("success").toString()
+
+                        if(success.equals("1")){
+                            Toast.makeText(requireContext(), getString(R.string.shop_suggested), Toast.LENGTH_SHORT).show()
+                        }else{
+                            Toast.makeText(requireContext(), getString(R.string.shop_not_suggested), Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }catch (e: Exception){
+                    Log.d("Second Fragment", "Response: %s".format(e.message.toString()))
+                }
+            },
+            {
+                    error ->
+                Log.d("Second Fragment", "Response : %s".format(error.message.toString()))
+            }
+        )
+        jsonObjectRequest.retryPolicy = DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 0, 1f)
+        WebDB.getInstance(requireContext()).addToRequestQueue(jsonObjectRequest)
+    }
 }

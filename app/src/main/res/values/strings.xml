@@ -20,4 +20,8 @@
     <string name="url_server">https://testapitrexworkshop.000webhostapp.com/api/</string>
     <string name="url_shop_create">suggest_shop/create.php</string>
     <string name="url_announce_read">announcements/read.php</string>
+    <string name="url_shop_likes_read">shop_likes/read_top.php</string>
+    <string name="shop_suggested">Shop Suggested</string>
+    <string name="shop_not_suggested">Shop not Suggested</string>
+
 </resources>
