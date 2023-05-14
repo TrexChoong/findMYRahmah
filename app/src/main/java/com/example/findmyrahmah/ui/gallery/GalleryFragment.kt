@@ -1,14 +1,19 @@
 package com.example.findmyrahmah.ui.gallery
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import com.android.volley.DefaultRetryPolicy
+import com.android.volley.Request
+import com.android.volley.toolbox.JsonObjectRequest
 import com.example.findmyrahmah.BitmapHelper
 import com.example.findmyrahmah.MarkerInfoWindowAdapter
 import com.example.findmyrahmah.R
@@ -27,6 +32,9 @@ import com.google.maps.android.ktx.addCircle
 import com.google.maps.android.ktx.addMarker
 import com.google.maps.android.ktx.awaitMap
 import com.google.maps.android.ktx.awaitMapLoad
+import my.edu.tarc.mycontact.WebDB
+import org.json.JSONObject
+import java.lang.Exception
 
 class GalleryFragment : Fragment() {
 
@@ -52,7 +60,7 @@ class GalleryFragment : Fragment() {
         val root: View = binding.root
         val mapFragment =
             childFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment
-
+        this.readAnnouncements();
         lifecycleScope.launchWhenCreated {
             // Get map
             val googleMap = mapFragment.awaitMap()
@@ -69,6 +77,8 @@ class GalleryFragment : Fragment() {
         }
         return root
     }
+
+
 
     private fun addClusteredMarkers(googleMap: GoogleMap) {
         // Create the ClusterManager class and set the custom renderer
@@ -154,4 +164,30 @@ class GalleryFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+        private fun readAnnouncements(){
+            val url = getString(R.string.url_server) + getString(R.string.url_announce_read)
+            val jsonObjectRequest = JsonObjectRequest(
+                Request.Method.GET, url, null,
+                {response ->
+                    try{
+                        if(response != null){
+                            val strResponse = response.toString()
+                            val jsonResponse = JSONObject(strResponse)
+                            val records: String = jsonResponse.get("records").toString()
+
+                            Log.d("Second Fragment", "Response: %s".format(records))
+                        }
+                    }catch (e: Exception){
+                        Log.d("Second Fragment", "Response: %s".format(e.message.toString()))
+                    }
+                },
+                {
+                        error ->
+                    Log.d("Second Fragment", "Response : %s".format(error.message.toString()))
+                }
+            )
+            jsonObjectRequest.retryPolicy = DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 0, 1f)
+            WebDB.getInstance(requireContext()).addToRequestQueue(jsonObjectRequest)
+        }
 }
