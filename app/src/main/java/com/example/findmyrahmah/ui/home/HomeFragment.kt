@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.suggestPlaceButton.setOnClickListener {
-             findNavController().navigate(R.id.nav_slideshow)
+             //findNavController().navigate(R.id.)
         }
     }
 
