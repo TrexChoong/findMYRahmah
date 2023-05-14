@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.findmyrahmah.databinding.ActivityMainBinding
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.findmyrahmah.place.Place
 import com.example.findmyrahmah.place.PlaceRenderer
 import com.example.findmyrahmah.place.PlacesReader
@@ -32,6 +34,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var restaurantList: ArrayList<Restaurant>
+    private lateinit var restaurantAdapter: RestaurantAdapter
 
 
     private val places: List<Place> by lazy {
@@ -42,6 +47,10 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        recyclerView = findViewById(R.id.restaurantRecycle)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         setSupportActionBar(binding.appBarMain.toolbar)
 

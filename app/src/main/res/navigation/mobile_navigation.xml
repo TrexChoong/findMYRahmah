@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/nav_favourite"
-        android:name="com.example.findmyrahmah.ui.favourite.FavouriteFragment"
+        android:name="com.example.findmyrahmah.ui.favourite.RestaurantListFragment"
         android:label="@string/menu_favourite"
-        tools:layout="@layout/fragment_favourite"/>
+        tools:layout="@layout/fragment_restaurantrecycle"/>
 </navigation>
