@@ -18,10 +18,10 @@
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.findmyrahmah.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_suggestion"
+        android:name="com.example.findmyrahmah.ui.Suggestion.SuggestionFragment"
+        android:label="@string/menu_suggestion"
+        tools:layout="@layout/fragment_suggestion" />
     <fragment
         android:id="@+id/nav_favourite"
         android:name="com.example.findmyrahmah.ui.favourite.FavouriteFragment"

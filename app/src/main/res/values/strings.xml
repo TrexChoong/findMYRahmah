@@ -9,9 +9,29 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Find MY Rahmah</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_suggestion">Suggest a Restaurant</string>
     <string name="menu_favourite">Favourite Restaurant</string>
     <string name="delete">delete</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Suggest">Suggest</string>
+    <string name="restaurantName">Restaurant Name</string>
+    <string name="address">Address</string>
+    <string name="CuisineType">Type of Cuisine</string>
+    <string name="openingHours">Opening Hours</string>
+    <string name="description">Description</string>
+    <string name="picture">Picture</string>
+    <string name="startTime">Start Time</string>
+    <string name="endTime">End Time</string>
+    <string-array name="cuisine">
+        <item>Chinese</item>
+        <item>Thai</item>
+        <item>Italian</item>
+        <item>French</item>
+        <item>Indian</item>
+        <item>Japanese</item>
+        <item>Malay</item>
+    </string-array>
+
+
 </resources>
