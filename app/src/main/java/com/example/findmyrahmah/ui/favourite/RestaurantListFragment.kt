@@ -5,7 +5,6 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.findmyrahmah.RestaurantAdapter
 import com.example.findmyrahmah.databinding.FragmentRestaurantrecycleBinding
 
 

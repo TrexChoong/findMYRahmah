@@ -1,6 +1,8 @@
 package com.example.findmyrahmah
 
+import android.app.DownloadManager.Request
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
@@ -15,11 +17,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.findmyrahmah.databinding.ActivityMainBinding
 import androidx.lifecycle.lifecycleScope
+import androidx.privacysandbox.tools.core.model.Method
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.example.findmyrahmah.place.Place
 import com.example.findmyrahmah.place.PlaceRenderer
 import com.example.findmyrahmah.place.PlacesReader
+import com.example.findmyrahmah.ui.favourite.RestaurantAdapter
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
@@ -34,9 +43,11 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var restaurantList: ArrayList<Restaurant>
-    private lateinit var restaurantAdapter: RestaurantAdapter
+    var recyclerView: RecyclerView? = null
+
+    var restaurantList = arrayListOf<Record>()
+    val restaurantInfo = "https://testapitrexworkshop.000webhostapp.com/api/shop_likes/read_top.php"
+
 
 
     private val places: List<Place> by lazy {
@@ -49,8 +60,39 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         recyclerView = findViewById(R.id.restaurantRecycle)
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        val reqQueue: RequestQueue = Volley.newRequestQueue(this)
+        val request = JsonObjectRequest(Request.Method.GET, restaurantInfo, null, {result ->
+            Log.d("Volley Example", result.toString())
+
+            val jsonArray = result.getJSONArray("data")
+            Log.d("Volley Sample", jsonArray.toString())
+            for (i in 0 until jsonArray.length()) {
+                val jsonObj = jsonArray.getJSONObject(i)
+                Log.d("Volley Sample", jsonObj.toString())
+
+                val restaurant = Record(
+                    jsonObj.getString("id"),
+                    jsonObj.getString("name"),
+                    jsonObj.getString("likes")
+                )
+
+                restaurantList.add(restaurant)
+
+            }
+
+            recyclerView?.layoutManager = LinearLayoutManager(this)
+            recyclerView?.adapter = RestaurantAdapter(restaurantList)
+
+        }, {err ->
+            Log.d("Volley Example Fail", err.message.toString())
+        })
+
+        reqQueue.add(request)
+
+
+
+
 
         setSupportActionBar(binding.appBarMain.toolbar)
 

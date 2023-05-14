@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
         android:id="@+id/restaurantCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,41 +40,30 @@
                 android:id="@+id/RestaurantName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/RestaurantID" />
+
+            <TextView
+                android:id="@+id/RestaurantID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
                 android:text="TextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/RestaurantAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="@+id/guideline3"
-                app:layout_constraintTop_toBottomOf="@+id/RestaurantName" />
-
-            <TextView
-                android:id="@+id/RestaurantRating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="@+id/RestaurantName"
-                app:layout_constraintStart_toEndOf="@+id/RestaurantName"
-                app:layout_constraintTop_toTopOf="@+id/RestaurantName" />
-
-            <TextView
                 android:id="@+id/TotalLike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="@+id/RestaurantAddress"
-                app:layout_constraintStart_toEndOf="@+id/RestaurantAddress"
-                app:layout_constraintTop_toTopOf="@+id/RestaurantAddress" />
+                app:layout_constraintBottom_toBottomOf="@+id/RestaurantName"
+                app:layout_constraintTop_toTopOf="@+id/RestaurantID"
+                tools:layout_editor_absoluteX="254dp" />
 
             <ImageButton
                 android:id="@+id/likeButton"
