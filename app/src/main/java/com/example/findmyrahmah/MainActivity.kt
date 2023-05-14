@@ -1,8 +1,11 @@
 package com.example.findmyrahmah
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -79,6 +82,7 @@ class MainActivity : AppCompatActivity() {
 //            googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 20))
 //        }
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

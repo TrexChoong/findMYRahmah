@@ -1,3 +1,4 @@
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -70,4 +71,6 @@ dependencies {
 
     // Lifecycle Runtime KTX Library
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+    implementation 'com.android.volley:volley:1.2.1'
+
 }
