@@ -1,8 +1,11 @@
 package com.example.findmyrahmah
 
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
+import android.widget.Button
+import android.widget.TimePicker
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -17,24 +20,22 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.findmyrahmah.databinding.ActivityMainBinding
-import androidx.lifecycle.lifecycleScope
 import com.example.findmyrahmah.place.Place
 import com.example.findmyrahmah.place.PlaceRenderer
 import com.example.findmyrahmah.place.PlacesReader
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.maps.android.clustering.ClusterManager
 import com.google.maps.android.ktx.addCircle
 import com.google.maps.android.ktx.addMarker
-import com.google.maps.android.ktx.awaitMap
-import com.google.maps.android.ktx.awaitMapLoad
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var startTimePickerButton: Button
+    private lateinit var endTimePickerButton: Button
 
 
     private val places: List<Place> by lazy {
@@ -59,11 +60,24 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_favourite
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_suggestion, R.id.nav_favourite
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+//        setContentView(R.layout.fragment_suggestion)
+//
+//        startTimePickerButton = findViewById(R.id.timePickerButtonStart)
+//        startTimePickerButton.setOnClickListener {
+//            showTimePickerDialog(true)
+//        }
+//
+//        endTimePickerButton = findViewById(R.id.timePickerButtonEnd)
+//        endTimePickerButton.setOnClickListener {
+//            showTimePickerDialog(false)
+//        }
+
 
 //        val mapFragment =
 //            supportFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment
@@ -81,6 +95,7 @@ class MainActivity : AppCompatActivity() {
 //            places.forEach { bounds.include(it.latLng) }
 //            googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 20))
 //        }
+
     }
 
 
@@ -177,5 +192,30 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         val TAG = MainActivity::class.java.simpleName
+    }
+
+    private fun showTimePickerDialog(isStartTime: Boolean) {
+        val calendar = Calendar.getInstance()
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+        val minute = calendar.get(Calendar.MINUTE)
+
+        val timePickerDialog = TimePickerDialog(
+            this,
+            TimePickerDialog.OnTimeSetListener { _: TimePicker, selectedHour: Int, selectedMinute: Int ->
+                // Handle the selected time (selectedHour and selectedMinute)
+                // You can update a TextView or perform any other action here
+                val selectedTime = String.format("%02d:%02d", selectedHour, selectedMinute)
+                if (isStartTime) {
+                    startTimePickerButton.text = selectedTime
+                } else {
+                    endTimePickerButton.text = selectedTime
+                }
+            },
+            hour,
+            minute,
+            false
+        )
+
+        timePickerDialog.show()
     }
 }

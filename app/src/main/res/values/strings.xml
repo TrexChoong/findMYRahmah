@@ -6,13 +6,43 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="action_upload">Upload</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Find MY Rahmah</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_suggestion">Suggest a Restaurant</string>
     <string name="menu_favourite">Favourite Restaurant</string>
     <string name="delete">delete</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Suggest">Suggest</string>
+    <string name="restaurantName">Restaurant Name</string>
+    <string name="address">Address</string>
+    <string name="CuisineType">Type of Cuisine</string>
+    <string name="openingHours">Opening Hours</string>
+    <string name="description">Description</string>
+    <string name="picture">Picture</string>
+    <string name="startTime">Start Time</string>
+    <string name="endTime">End Time</string>
+    <string-array name="cuisine">
+        <item>Chinese</item>
+        <item>Thai</item>
+        <item>Italian</item>
+        <item>French</item>
+        <item>Indian</item>
+        <item>Japanese</item>
+        <item>Malay</item>
+    </string-array>
+
+
+
+    <!-- API IMPLEMENTATION -->
+    <string name="url_server">https://testapitrexworkshop.000webhostapp.com/api/</string>
+    <string name="url_shop_create">suggest_shop/create.php</string>
+    <string name="url_announce_read">announcements/read.php</string>
+    <string name="url_shop_likes_read">shop_likes/read_top.php</string>
+    <string name="shop_suggested">Shop Suggested</string>
+    <string name="shop_not_suggested">Shop not Suggested</string>
+
     <string name="announcement">Announcement</string>
 </resources>

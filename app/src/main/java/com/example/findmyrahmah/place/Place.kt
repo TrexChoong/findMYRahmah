@@ -16,12 +16,13 @@ package com.example.findmyrahmah.place
 
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.clustering.ClusterItem
+import java.util.*
 
 data class Place(
     val name: String,
     val latLng: LatLng,
     val address: String,
-    val rating: Float
+    val date_expired: Date
 ) : ClusterItem {
     override fun getPosition(): LatLng =
         latLng

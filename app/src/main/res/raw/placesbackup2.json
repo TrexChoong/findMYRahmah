@@ -1,0 +1,128 @@
+[
+  {
+    "geometry": {
+      "location": {
+        "lat": 3.215251,
+        "lng": 101.726455
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 3.2165958802915,
+          "lng": 101.7277141302915
+        },
+        "southwest": {
+          "lat": 3.21389791970851,
+          "lng": 101.7250161697085
+        }
+      }
+    },
+    "name": "YumYum Canteen TARUMT",
+    "rating": 4.2,
+    "vicinity": "Block L, Tunku Abdul Rahman University of Management and Technology "
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 3.216111,
+        "lng": 101.7221375
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 3.21601705,
+          "lng": 101.7233966302915
+        },
+        "southwest": {
+          "lat": 3.21475791970851,
+          "lng": 101.7206986697085
+        }
+      }
+    },
+    "name": "Red Bricks Cafeteria TARUMT",
+    "rating": 4.2,
+    "vicinity": "Tunku Abdul Rahman University College"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 3.2036427,
+        "lng": 101.6947113
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 3.2049875802915,
+          "lng": 101.6959704302915
+        },
+        "southwest": {
+          "lat": 3.20229761970851,
+          "lng": 101.6934724697085
+        }
+      }
+    },
+    "name": "God Taste Restaurant",
+    "rating": 4.2,
+    "vicinity": "Danau Kota, 53100 Kuala Lumpur, Federal Territory of Kuala Lumpur"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 3.2056919,
+        "lng": 101.7070257
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 3.2070367802915,
+          "lng": 101.7082848302915
+        },
+        "southwest": {
+          "lat": 3.20434681970851,
+          "lng": 101.7057868697085
+        }
+      }
+    },
+    "name": "Toushka Mediterranean Restaurant",
+    "rating": 4.2,
+    "vicinity": "No 67-0, Platinum Walk, Off, Jalan Langkawi, Taman Danau Kota, 53300, Wilayah Persekutuan Kuala Lumpur"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 3.2060752,
+        "lng": 101.7146209
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 3.2074200802915,
+          "lng": 101.7158800302915
+        },
+        "southwest": {
+          "lat": 3.20473011970851,
+          "lng": 101.7133820697085
+        }
+      }
+    },
+    "name": "Liki Liki Restaurant",
+    "rating": 4.2,
+    "vicinity": "Danau Kota, 53100 Kuala Lumpur, Federal Territory of Kuala Lumpur"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 3.2058208,
+        "lng": 101.7172039
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 3.2071656802915,
+          "lng": 101.7184630302915
+        },
+        "southwest": {
+          "lat": 3.20447571970851,
+          "lng": 101.7157650697085
+        }
+      }
+    },
+    "name": "Boat Noodle",
+    "rating": 4.2,
+    "vicinity": "Lot G - 35, Jln Taman Ibu Kota, Danau Kota, 53300 Kuala Lumpur, Federal Territory of Kuala Lumpur"
+  }
+]
