@@ -66,17 +66,17 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        setContentView(R.layout.fragment_suggestion)
-
-        startTimePickerButton = findViewById(R.id.timePickerButtonStart)
-        startTimePickerButton.setOnClickListener {
-            showTimePickerDialog(true)
-        }
-
-        endTimePickerButton = findViewById(R.id.timePickerButtonEnd)
-        endTimePickerButton.setOnClickListener {
-            showTimePickerDialog(false)
-        }
+//        setContentView(R.layout.fragment_suggestion)
+//
+//        startTimePickerButton = findViewById(R.id.timePickerButtonStart)
+//        startTimePickerButton.setOnClickListener {
+//            showTimePickerDialog(true)
+//        }
+//
+//        endTimePickerButton = findViewById(R.id.timePickerButtonEnd)
+//        endTimePickerButton.setOnClickListener {
+//            showTimePickerDialog(false)
+//        }
 
 
 //        val mapFragment =
