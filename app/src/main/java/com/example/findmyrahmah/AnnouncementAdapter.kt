@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 class AnnouncementAdapter(private val announcementList: List<String>) : RecyclerView.Adapter<AnnouncementAdapter.AnnouncementViewHolder>() {
 
     inner class AnnouncementViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val announcementTextView: TextView = itemView.findViewById(R.id.announcement_textView)
+        val announcementTextView: TextView = itemView.findViewById(R.id.item_announcement_title)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnnouncementViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_home, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.announcement, parent, false)
         return AnnouncementViewHolder(view)
     }
 

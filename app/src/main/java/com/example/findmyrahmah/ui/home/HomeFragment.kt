@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
                 val jsonArray = JSONArray(response)
                 for (i in 0 until jsonArray.length()) {
                     val jsonObject = jsonArray.getJSONObject(i)
-                    val announcement = jsonObject.getString("announcement")
+                    val announcement = jsonObject.getString("title")
                     announcementList.add(announcement)
                 }
                 announcementAdapter.notifyDataSetChanged()
